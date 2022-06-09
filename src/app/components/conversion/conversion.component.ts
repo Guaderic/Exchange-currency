@@ -11,7 +11,7 @@ export class ConversionComponent implements OnInit {
   base = 'UAH';
   cont2 = 'USD'
   result:string = '1'
-  arr:any = []
+  arr = []
   form1:FormGroup
   form2:FormGroup
   constructor(private service:ExchangeService) { }
@@ -34,9 +34,9 @@ export class ConversionComponent implements OnInit {
 
   }
   convert() {
-    this.service.getCurrency(this.base).subscribe(value => this.arr = value)
-    let resCount1 = Object.values(this.form1.value).toString()
-    let resCount2 = Object.values(this.form2.value).toString()
+   this.service.getCurrency(this.base).subscribe(value => {
+     console.log( this.form1.value.count1)
+   })
 
   }
 }
