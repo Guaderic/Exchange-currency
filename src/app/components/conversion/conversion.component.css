@@ -43,10 +43,16 @@ input{
 }
 .btn{
   width: 85%;
+  font-size: 20px;
   height: 50px;
   cursor: pointer;
   border-radius: 10px;
   border: none;
   background: darkblue;
+  color: snow;
+}
+p{
+  font-size: 25px;
+  font-family: Arial;
   color: snow;
 }
