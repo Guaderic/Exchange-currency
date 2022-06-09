@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import { ConversionComponent } from './components/conversion/conversion.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ConversionComponent } from './components/conversion/conversion.componen
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+      ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

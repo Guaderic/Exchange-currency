@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {IExchange} from "../models/IExchange";
+import {IExchange} from "../models";
 import {urls} from "../../constants";
+import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExchangeService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  getAllSymbols():Observable<IExchange>{
+
+
+  getAllSymbols(): Observable<IExchange> {
     return this.httpClient.get<IExchange>(urls.symbols)
   }
-}
 
+  getCurrency(country1: string) {
+    let url = 'https://api.exchangerate.host/latest?base='+country1
+    return this.httpClient.get(url)
+
+  }
+}

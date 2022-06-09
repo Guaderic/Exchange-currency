@@ -2,13 +2,27 @@
   <div class="box">
     <h1>Currency Converter</h1>
     <div class="left-box">
-      <select></select>
-      <input type="number" name="" id="input">
+      <select #c1 name="" id="country1"(mouseleave)="changeBase(c1.value)">
+        <option value="UAH">Ukrainian hryvna</option>
+        <option value="USD">American dollar</option>
+        <option value="EUR">Euro</option>
+      </select>
+      <form [formGroup]="form1">
+      <input formControlName="count1" type="number" name="" id="input">
+      </form>
     </div>
     <div class="right-box">
-      <select></select>
-      <input type="number" name="" id="result" disabled>
+      <select #c2 name="" id="country2" (mouseleave)="toCountry(c2.value)">
+        <option value="UAH">Ukrainian hryvna</option>
+        <option value="USD">American dollar</option>
+        <option value="EUR">Euro</option>
+      </select>
+      <form [formGroup]="form2" >
+      <input formControlName = 'count2' type="number" name="" id="result">
+      </form>
     </div>
-    <button class="btn" id="btn">Convert</button>
+    <button class="btn" id="btn" (click)="convert()">Convert</button>
+
+    <p>1{{arr.base}}</p><p>{{arr.rates}}</p>
   </div>
 </div>
